@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <label for="admin-password">Enter Admin Password:</label>
+        <input type="password" id="admin-password" required>
+        <br><br>
+        
+        <div>
+            <button onclick="viewAllBids()">View All Bids</button>
+            <button onclick="setPrizeAmount()">Set Prize Amount</button>
+            <button onclick="viewWinningTicket()">View Winning Ticket</button>
+        </div>
+
+        <div id="admin-info" style="margin-top: 20px;"></div>
+    </div>
+
+    <script src="js/admin-scripts.js"></script>
+</body>
+</html>

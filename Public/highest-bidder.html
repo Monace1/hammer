@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest Bidder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 text-center">Current Highest Bidder</h1>
+        <div id="highestBidderInfo" class="mt-4 text-center">
+            <p class="lead">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        async function getHighestBidder() {
+            const response = await fetch('/highest-bidder-info');
+            const result = await response.json();
+            document.getElementById('highestBidderInfo').innerHTML = `
+                <h3>Ticket: ${result.ticket}</h3>
+                <p>Bid Amount: $${result.bidAmount}</p>
+            `;
+        }
+        getHighestBidder();
+    </script>
+</body>
+</html>
